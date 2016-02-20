@@ -10,30 +10,108 @@ html {
 }
 
 body {
+	&:before, &:after {
+		content: '';
+		background: image-url('shared/bg-deco.png') 0 0 no-repeat;
+		display: block;
+		position: absolute;
+	}
+
+	&:before {
+		width: 145px;
+		height: 105px;
+		top: 269px;
+		left: 238px;
+	}
+
+	&:after {
+		background-position: -145px 0;
+		width: 138px;
+		height: 138px;
+		bottom: 120px;
+		right: 229px;
+	}
+
 	&.index {
 		background: image-url('bg-index.png') center center no-repeat;
 		background-size: 100% auto;
+	}
 
-		&:before, &:after {
-			content: '';
-			background: image-url('bg-deco.png') 0 0 no-repeat;
-			display: block;
-			position: absolute;
-		}
+	&.sub-page {
+		position: relative;
 
 		&:before {
-			width: 145px;
-			height: 105px;
-			top: 269px;
-			left: 238px;
+			top: 156px;
+			left: 117px;
 		}
 
 		&:after {
-			background-position: -145px 0;
-			width: 138px;
-			height: 138px;
-			bottom: 120px;
-			right: 229px;
+			bottom: 123px;
+			right: 111px;
+		}
+
+		.l-header {
+			margin-top: 0;
+			background: #000;
+			width: 100%;
+			height: 90px;
+			position: fixed;
+			top: 0;
+			left: 0;
+			overflow: hidden;
+			z-index: 5;
+
+			.logo {
+				top: -7px;
+			}
+
+			.menu-list {
+				height: 90px;
+				line-height: 90px;
+
+				.link {
+					color: #fff;
+
+					&:hover {
+						color: #ff8668;
+					}
+				}
+			}
+		}
+	}
+
+	&.about {
+		background: #ff8668;
+
+		.l-header .menu-list .link {
+			&:hover, &.is-curr {
+				color: #ff8668;
+			}
+		}
+	}
+
+	&.tour {
+		background: #70ffbd;
+
+		.l-header .menu-list .link {
+			&:hover, &.is-curr {
+				color: #70ffbd;
+			}
+		}
+
+		.main-content .btn-more {
+			margin: 0 auto;
+			width: 306px;
+		}
+	}
+
+	&.music {
+		background: #ff7be5;
+
+		.l-header .menu-list .link {
+			&:hover, &.is-curr {
+				color: #ff7be5;
+			}
 		}
 	}
 }
@@ -47,7 +125,7 @@ a {
 	position: relative;
 
 	.logo {
-		background: image-url('logo.png') 0 0 no-repeat;
+		background: image-url('shared/logo.png') 0 0 no-repeat;
 		width: 171px;
 		height: 102px;
 		position: absolute;
@@ -70,11 +148,18 @@ a {
 		}
 
 		.link {
+			display: block;
+			width: 100%;
+			height: 100%;
 			color: #000;
 			font-size: 18px;
 			font-weight: bold;
 		}
 	}
+}
+
+.l-content {
+	overflow: hidden;
 }
 
 .show-info {
@@ -130,6 +215,125 @@ a {
 	@include box-sizing(border-box);
 }
 
+.main-content {
+	margin: 0 auto;
+	padding: 130px 0 112px 0;
+	width: 720px;
+
+	.main-title {
+		margin-bottom: 48px;
+		font-size: 36px;
+		text-align: center;
+	}
+
+	.img-wrap {
+		margin-bottom: 70px;
+
+		img {
+			margin: 0 auto;
+			display: block;
+			border: 3px solid #000;
+		}
+	}
+
+	.desc {
+		margin-bottom: 20px;
+		font-size: 14px;
+		line-height: 20px;
+		text-indent: 28px;
+	}
+}
+
+.tour-list {
+	margin-bottom: 48px;
+	color: #fff;
+
+	.list {
+		height: 80px;
+		font-size: 0;
+		line-height: 80px;
+
+		> * {
+			display: inline-block;
+			font-size: 22px;
+		}
+
+		.date {
+			width: 135px;
+		}
+
+		.place {
+			width: 340px;
+		}
+
+		.city {
+			width: 215px;
+		}
+
+		.link {
+			background: image-url('shared/btn-icons.png') 0 0 no-repeat;
+			background-position: -41px 0;
+			display: none;
+			width: 21px;
+			height: 16px;
+		}
+
+		&.completed {
+			color: #000;
+
+			.link {
+				display: inline-block;
+			}
+		}
+
+		&.now {
+			background: #000;
+			position: relative;
+
+			&:before, &:after {
+				content: '';
+				background: #000;
+				width: 1000px;
+				height: 100%;
+				position: absolute;
+				top: 0;
+			}
+
+			&:before {
+				left: -1000px;
+			}
+
+			&:after {
+				right: -1000px;
+			}
+
+			.date:before, .link:after {
+				content: 'NEAR SHOW';
+				margin-top: -18px;
+				width: 50px;
+				position: absolute;
+				top: 50%;
+				left: -100px;
+				color: #70ffbd;
+				font-size: 12px;
+				line-height: 18px;
+				text-align: center;
+			}
+
+			.link {
+				background-position: -62px 0;
+				display: inline-block;
+
+				&:after {
+					left: auto;
+					right: -100px;
+					z-index: 1;
+				}
+			}
+		}
+	}
+}
+
 .l-footer {
 	background: #000;
 	width: 100%;
@@ -137,6 +341,7 @@ a {
 	position: fixed;
 	bottom: 0;
 	left: 0;
+	z-index: 5;
 	letter-spacing: 1px;
 	line-height: 52px;
 	@include box-sizing(border-box);
@@ -166,6 +371,10 @@ a {
 				display: none;
 			}
 		}
+
+		.link:hover {
+			text-decoration: underline;
+		}
 	}
 
 	.community-list {
@@ -180,7 +389,7 @@ a {
 
 		.link {
 			margin-left: 20px;
-			background: image-url('btn-icons.png') 0 0 no-repeat;
+			background: image-url('shared/btn-icons.png') 0 0 no-repeat;
 			display: block;
 			overflow: hidden;
 			text-indent: 200%;
