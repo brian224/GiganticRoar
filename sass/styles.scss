@@ -21,49 +21,6 @@ body {
 		background: image-url('index/bg-index.png') center center no-repeat;
 	}
 
-	&.sub-page {
-		position: relative;
-
-		&:before {
-			top: 156px;
-			left: 117px;
-		}
-
-		&:after {
-			bottom: 123px;
-			right: 111px;
-		}
-
-		.l-header {
-			margin-top: 0;
-			background: #000;
-			width: 100%;
-			height: 90px;
-			position: fixed;
-			top: 0;
-			left: 0;
-			overflow: hidden;
-			z-index: 5;
-
-			.logo {
-				top: -7px;
-			}
-
-			.menu-list {
-				height: 90px;
-				line-height: 90px;
-
-				.link {
-					color: #fff;
-
-					&:hover {
-						color: #ff8668;
-					}
-				}
-			}
-		}
-	}
-
 	&.about {
 		background: #ff8668;
 
@@ -164,8 +121,6 @@ a {
 	}
 
 	.menu-list {
-		margin-left: 65px;
-		width: calc(100% - 171px - 65px - 43px);
 		font-size: 0;
 		line-height: 80px;
 
@@ -392,6 +347,13 @@ a {
 		position: absolute;
 		top: 24px;
 		right: 24px;
+
+		&.books {
+			background-position: -98px 0;
+			width: 46px;
+			position: absolute;
+			right: 132px;
+		}
 	}
 }
 
@@ -653,12 +615,66 @@ a {
 		}
 	}
 
+	.l-header {
+		.logo {
+			right: 43px;
+		}
+
+		.menu-list {
+			margin-left: 65px;
+			width: calc(100% - 171px - 65px - 43px);
+		}
+	}
+
 	.main-content {
 		width: 720px;
 	}
 }
 
 @media screen and (min-width: 740px) {
+	body.sub-page {
+		position: relative;
+
+		&:before {
+			top: 156px;
+			left: 117px;
+		}
+
+		&:after {
+			bottom: 123px;
+			right: 111px;
+		}
+
+		.l-header {
+			margin-top: 0;
+			background: #000;
+			width: 100%;
+			height: 90px;
+			position: fixed;
+			top: 0;
+			left: 0;
+			overflow: hidden;
+			z-index: 5;
+
+			.logo {
+				top: -7px;
+			}
+
+			.menu-list {
+				height: 90px;
+				line-height: 90px;
+
+				.link {
+					color: #fff;
+
+					&:hover {
+						color: #ff8668;
+					}
+				}
+			}
+		}
+	}
+
 	.l-header {
 		margin-top: 26px;
 		position: relative;
@@ -668,7 +684,10 @@ a {
 			height: 102px;
 			position: absolute;
 			top: 0;
-			right: 43px;
+		}
+
+		.btn-menu {
+			display: none;
 		}
 	}
 
@@ -729,54 +748,230 @@ a {
 		}
 	}
 
+	.l-header {
+		.logo {
+			right: 21px;
+		}
+
+		.menu-list {
+			margin-left: 40px;
+			width: calc(100% - 171px - 40px - 43px);
+		}
+	}
+
 	.main-content .img-wrap img {
 		max-width: 100%;
 		@include box-sizing(border-box);
 	}
+
+	.tour-list {
+		padding: 0 12px;
+
+		.list {
+			margin: 15px 0;
+			padding: 0 60px 0 100px;
+			position: relative;
+
+			.date {
+				width: auto;
+				position: absolute;
+				top: 0;
+				left: 10px;
+			}
+
+			.place, .city {
+				width: 50%;
+			}
+
+			.link {
+				margin-top: -8px;
+				position: absolute;
+				top: 50%;
+				right: 10px;
+			}
+		}
+	}
+
+	.album-list {
+		margin: 0 21px;
+	}
 }
 
 @media screen and (max-width: 739px) {
-	body {
-		&:before {
-			top: 80px;
-			left: 20px;
-		}
+	html {
+		border: 10px solid #000;
+	}
 
-		&:after {
-			bottom: 80px;
-			right: 20px;
+	body {
+		&:before, &:after {
+			display: none;
 		}
 
 		&.index {
 			position: relative;
 
 			.l-content {
-				padding: 100px 0 172px 0;
+				padding: 180px 0 20px 0;
 			}
 		}
 
-		&.sub-page .l-header {
-			margin: 0;
-			height: 70px;
+		&.sub-page {
+			.l-header .logo {
+				display: none;
+			}
 
-			.logo {
-				margin-top: 10px;
+			.main-content {
+				padding: 0;
+
+				.main-title {
+					margin: 24px 0;
+				}
+
+				.img-wrap {
+					margin-bottom: 20px;
+				}
+			}
+
+			.l-footer {
+				> *, .link {
+					color: #000;
+				}
+
+				.community-list {
+					.link {
+						&.facebook {
+							background-position: 0 -16px;
+						}
+
+						&.instagram {
+							background-position: -7px -16px;
+						}
+
+						&.youtube {
+							background-position: -22px -16px;
+						}
+					}
+				}
+			}
+		}
+
+		&.tour {
+			overflow-x: hidden;
+
+			.main-content {
+				padding-bottom: 20px;
+					
+				.btn-more {
+					width: 100%;
+				}
 			}
 		}
 	}
 
 	.l-header {
-		margin: 13px 0;
+		background: #000;
+		height: 36px;
+		position: relative;
+		z-index: 1;
 
 		.logo {
 			margin: 0 auto;
 			background-size: 85.5px 51px;
 			width: 85.5px;
 			height: 51px;
+			position: absolute;
+			bottom: -65px;
+			right: 12px;
 		}
 
 		.l-nav {
-			display: none;
+			position: relative;
+
+			&.is-active {
+				.menu-list {
+					max-height: 100vh;
+				}
+
+				.icon-menu {
+					background: #000;
+
+					&:before {
+						margin-top: 0;
+						@include transform(rotate(-45deg));
+					}
+
+					&:after {
+						margin-top: 0;
+						@include transform(rotate(45deg));
+					}
+				}
+			}
+		}
+
+		.menu-list {
+			margin: 0;
+			padding-top: 36px;
+			background: rgba(0, 0, 0, 0.5);
+			width: 100%;
+			max-height: 0;
+			overflow: hidden;
+			@include transition(ease-in-out max-height 0.3s);
+
+			.list {
+				display: block;
+				width: 100%;
+				line-height: 72px;
+				text-align: center;
+			}
+
+			.link {
+				color: #fff;
+			}
+		}
+
+		.btn-menu {
+			margin-left: -22px;
+			background: transparent;
+			display: block;
+			width: 44px;
+			height: 46px;
+			position: absolute;
+			top: -10px;
+			left: 50%;
+			border: 0;
+
+			.icon-menu {
+				margin: -1px 0 0 -12px;
+				background: #fff;
+				display: block;
+				width: 24px;
+				height: 2px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				@include transition(ease-in-out all 0.3s);
+
+				&:before, &:after {
+					content: '';
+					margin-left: -12px;
+					background: #fff;
+					width: 100%;
+					height: 2px;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					@include transform-origin(center);
+					@include transition(ease-in-out all 0.3s);
+				}
+
+				&:before {
+					margin-top: -8px;
+				}
+
+				&:after {
+					margin-top: 6px;
+				}
+			}
 		}
 	}
 
@@ -793,6 +988,10 @@ a {
 			margin-bottom: 15px;
 			padding-left: 80px;
 			position: relative;
+
+			> span {
+				width: auto;
+			}
 		}
 
 		.date {
@@ -808,11 +1007,86 @@ a {
 		line-height: 39px;
 	}
 
+	.tour-list {
+		margin-bottom: 0;
+
+		.list {
+			margin: 15px 0;
+			padding: 0 34px 0 58px;
+			height: 46px;
+			position: relative;
+			line-height: 46px;
+
+			.date {
+				left: 0;
+			}
+
+			.place, .city {
+				display: block;
+				width: auto;
+				height: 23px;
+				line-height: 23px;
+			}
+
+			.link {
+				right: 0;
+			}
+
+			> * {
+				font-size: 12px;
+				line-height: 46px;
+			}
+		}
+	}
+
+	.album-list {
+		margin: 40px 0 0 0;
+
+		> .list {
+			padding: 112px 12px 12px 12px;
+		}
+
+		.img-wrap {
+			width: 120px;
+			height: 120px;
+			top: -18px;
+			left: 12px;
+
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		.shop-link {
+			background-size: 108px 27px;
+			width: 74px;
+			height: 27px;
+			top: 12px;
+			right: 12px;
+
+			&.books {
+				background-position: -74px 0;
+				width: 35px;
+				position: absolute;
+				top: 51px;
+				right: 12px;
+			}
+		}
+	}
+
 	.l-footer {
-		padding-bottom: 30px;
+		padding: 30px 0 50px 0;
+		background: none;
+		position: relative;
+		bottom: auto;
+		left: auto;
 
 		.copyright {
-			margin-bottom: 10px;
+			width: 100%;
+			position: absolute;
+			bottom: 5px;
+			text-align: center;
 		}
 
 		.band-name {
@@ -820,10 +1094,15 @@ a {
 		}
 
 		.community-list {
+			margin-top: 0;
 			width: 100%;
-			top: auto;
-			bottom: 5px;
+			top: 0;
+			right: 0;
 			text-align: center;
+
+			.link {
+				margin: 0 10px;
+			}
 		}
 	}
 }
