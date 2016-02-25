@@ -15,6 +15,7 @@ body {
 		background: image-url('shared/bg-deco.png') 0 0 no-repeat;
 		display: block;
 		position: absolute;
+		z-index: -1;
 	}
 
 	&.index {
@@ -177,8 +178,10 @@ a {
 }
 
 .btn-more {
+	background: transparent;
 	display: block;
 	border: 3px solid #000;
+	cursor: pointer;
 	color: #000;
 	font-size: 18px;
 	font-weight: bold;
@@ -219,10 +222,21 @@ a {
 	margin-bottom: 48px;
 	color: #fff;
 
+	&.show-all .list {
+		display: block;
+	}
+
 	.list {
+		display: none;
 		height: 80px;
 		font-size: 0;
 		line-height: 80px;
+
+		@for $i from 1 through 10 {
+			&:nth-child(#{$i}) {
+				display: block;
+			}
+		}
 
 		> * {
 			display: inline-block;
@@ -309,6 +323,7 @@ a {
 	> .list {
 		margin-bottom: 56px;
 		padding: 24px 24px 30px 228px;
+		background: #ff7be5;
 		min-height: 206px;
 		position: relative;
 		border: 3px solid #000;
@@ -438,6 +453,7 @@ a {
 		.list {
 			margin-bottom: 48px;
 			margin-left: 28px;
+			background: #ffe981;
 			width: 219px;
 			float: left;
 			@include box-sizing(border-box);
@@ -629,6 +645,11 @@ a {
 	.main-content {
 		width: 720px;
 	}
+
+	.video-frame {
+		width: 720px;
+		height: 400px;
+	}
 }
 
 @media screen and (min-width: 740px) {
@@ -794,6 +815,41 @@ a {
 
 	.album-list {
 		margin: 0 21px;
+	}
+
+	.video-list {
+		margin: 0 21px;
+	}
+
+	.video-frame {
+		width: 100%;
+		height: 400px;
+	}
+
+	.shop {
+		.main-content {
+			padding-right: 21px;
+			padding-left: 21px;
+		}
+
+		.item-list {
+			margin: 0 -10px;
+			text-align: center;
+
+			.list {
+				margin: 0 10px 30px 10px;
+				display: inline-block;
+				width: 204px;
+				float: none;
+				vertical-align: top;
+				text-align: left;
+
+				&:nth-child(3n+1) {
+					margin-left: 10px;
+					clear: none;
+				}
+			}
+		}
 	}
 }
 
@@ -1075,12 +1131,46 @@ a {
 		}
 	}
 
+	.video-list {
+		margin: 0;
+
+		> .list .video-title {
+			margin: 0 auto;
+			width: 280px;
+			font-size: 15px;
+			line-height: 1.6em;
+		}
+	}
+
+	.video-frame {
+		margin: 0 auto;
+		display: block;
+		width: 280px;
+		height: 156px;
+	}
+
+	.shop {
+		.main-content {
+			padding-right: 10px;
+			padding-left: 10px;
+		}
+
+		.item-list .list {
+			width: 216px;
+		}
+	}
+
+	.contact .media-list {
+		margin-bottom: 20px;
+	}
+
 	.l-footer {
 		padding: 30px 0 50px 0;
 		background: none;
 		position: relative;
 		bottom: auto;
 		left: auto;
+		z-index: 0;
 
 		.copyright {
 			width: 100%;
