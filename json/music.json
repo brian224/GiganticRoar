@@ -8,8 +8,12 @@
 				"在路上 On The Road"
 			],
 			"image": "album01.jpg",
-			"linkLtues": "https://itunes.apple.com/tw/album/ni-shi-zhu-pai-single/id1017230423?l=zh",
-			"linkBooks": ""
+			"link": [
+				{
+					"site": "iTunes",
+					"url": "https://itunes.apple.com/tw/album/ni-shi-zhu-pai-single/id1017230423?l=zh"
+				}
+			]
 		},
 		{
 			"title": "登鸛雀樓",
@@ -17,12 +21,20 @@
 			"list": [
 				"登鸛雀樓 Climbing Up the Birdy Tower", 
 				"小紅帽的悲劇 The Tragedy Of Little R", 
-				"我愛妳因為妳有大眼睛 I Love You ’Cause You’ve got Big Big Eyes", 
+				"我愛妳因為妳有大眼睛<br>I Love You ’Cause You’ve got Big Big Eyes", 
 				"一分耕耘沒有一分收穫<br>They that Sow in Tears Shall Still Reap in Sorrow"
 			],
 			"image": "album02.jpg",
-			"linkLtues": "https://itunes.apple.com/tw/album/deng-guan-que-lou-ep/id888637605?l=zh",
-			"linkBooks": "http://www.books.com.tw/exep/cdfile.php?item=0020179015"
+			"link": [
+				{
+					"site": "iTunes",
+					"url": "https://itunes.apple.com/tw/album/deng-guan-que-lou-ep/id888637605?l=zh"
+				},
+				{
+					"site": "博客來",
+					"url": "http://www.books.com.tw/exep/cdfile.php?item=0020179015"
+				}
+			]
 		},
 		{
 			"title": "突然決定去泡溫泉",
@@ -32,8 +44,12 @@
 				"大家一起來玩德州撲克"
 			],
 			"image": "album03.jpg",
-			"linkLtues": "https://itunes.apple.com/tw/album/tu-ran-jue-ding-qu-pao-wen/id1021907205?l=zh",
-			"linkBooks": ""
+			"link": [
+				{
+					"site": "iTunes",
+					"url": "https://itunes.apple.com/tw/album/tu-ran-jue-ding-qu-pao-wen/id1021907205?l=zh"
+				}
+			]
 		}
 	]
 }

@@ -78,12 +78,11 @@ $(window).load(function(){
 		var _Str = '';
 		
 		$.each(Ajax.response, function (index, value) {
-			var _title     = value.title,
-				_issue     = value.issue,
-				_list      = value.list,
-				_image     = value.image,
-				_linkLtues = value.linkLtues,
-				_linkBooks = value.linkBooks;
+			var _title = value.title,
+				_issue = value.issue,
+				_list  = value.list,
+				_image = value.image,
+				_link  = value.link;
 
 			_Str += '<li class="list">';
 			_Str += 	'<h3 class="album-title">' + _title + '</h3>';
@@ -91,7 +90,7 @@ $(window).load(function(){
 			_Str += 	'<ol class="song-list">';
 
 			for (var i = 0; i < _list.length; i++) {
-				_Str += 		'<li class="list">' + _list[i] + '</li>';
+				_Str += '<li class="list">' + _list[i] + '</li>';
 			}
 
 			_Str += 	'</ol>';
@@ -99,12 +98,8 @@ $(window).load(function(){
 			_Str += 		'<img src="img/music/' + _image + '" alt="' + _title + '">';
 			_Str += 	'</figure>';
 
-			if (_linkLtues !== '') {
-				_Str += 	'<a class="shop-link itues" href="' + _linkLtues + '" target="_blank"></a>';
-			}
-
-			if (_linkBooks !== '') {
-				_Str += 	'<a class="shop-link books" href="' + _linkBooks + '" target="_blank"></a>';
+			for (var i = 0; i < _link.length; i++) {
+				_Str += '<a class="shop-link itues" href="' + _link[i].url + '" target="_blank">' + _link[i].site + '</a>';
 			}
 
 			_Str += '</li>';
