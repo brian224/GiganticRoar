@@ -708,6 +708,10 @@ a {
 			top: 0;
 		}
 
+		.menu-list .list:first-child {
+			display: none;
+		}
+
 		.btn-menu {
 			display: none;
 		}
@@ -977,7 +981,7 @@ a {
 			.list {
 				display: block;
 				width: 100%;
-				line-height: 72px;
+				line-height: 60px;
 				text-align: center;
 			}
 
