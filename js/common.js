@@ -5,7 +5,8 @@ $(window).load(function(){
 		$tourList  = $('.tour-list'),
 		$albumList = $('.album-list'),
 		$videoList = $('.video-list'),
-		$btnMore   = $('.btn-more');
+		$btnMore   = $('.btn-more'),
+		$slider    = $('.showcase .slide-show');
 
 	$menu.on('click', function(){
 		$(this).parent().toggleClass('is-active');
@@ -15,6 +16,21 @@ $(window).load(function(){
 		$.getJSON('/json/tour.json' , function(Ajax){
 			indexItem(Ajax);
 		});
+
+		imgFull();
+
+		// $slider.owlCarousel({
+		// 	items              : 1,
+		// 	nav                : false,
+		// 	loop               : true,
+		// 	dots               : false,
+		// 	autoplay           : true,
+		// 	autoplayTimeout    : 3500,
+		// 	autoplayHoverPause : false,
+		// 	animateOut         : 'fadeOut',
+		// 	animateIn          : 'fadeIn',
+		// 	mouseDrag          : false
+		// });
 	}
 
 	if ($body.hasClass('tour')) {
@@ -122,5 +138,23 @@ $(window).load(function(){
 		});
 
 		$videoList.append(_Str);
+	}
+
+	function imgFull() {
+		var $img     = $slider.find('img'),
+			_Wwidth  = $(window).width(),
+			_Wheight = $(window).height();
+
+		$img.each(function(){
+			var _width  = $(this).width(),
+				_height = $(this).height();
+
+			// console.log(_Wwidth + ', ' + _Wheight + ', ' + _width + ', ' + _height);
+			if ( ( _Wheight / _Wwidth ) > ( _height / _width ) ) {
+
+			} else {
+
+			}
+		});
 	}
 });

@@ -18,10 +18,6 @@ body {
 		z-index: -1;
 	}
 
-	&.index {
-		background: image-url('index/bg-index.png') center center no-repeat;
-	}
-
 	&.about {
 		background: #ff8668;
 
@@ -105,6 +101,18 @@ body {
 
 a {
 	text-decoration: none;
+}
+
+.showcase {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border: 21px solid #000;
+	overflow: hidden;
+	z-index: 0;
+	@include box-sizing(border-box);
 }
 
 .l-header {
@@ -626,10 +634,6 @@ a {
 			bottom: 120px;
 			right: 229px;
 		}
-
-		&.index {
-			background-size: 100% auto;
-		}
 	}
 
 	.l-header {
@@ -755,10 +759,6 @@ a {
 			height: 79px;
 			bottom: 60px;
 			right: 115px;
-		}
-
-		&.index {
-			background-size: auto 100%;
 		}
 
 		&.sub-page {
