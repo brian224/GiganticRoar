@@ -19,18 +19,18 @@ $(window).load(function(){
 
 		imgFull();
 
-		// $slider.owlCarousel({
-		// 	items              : 1,
-		// 	nav                : false,
-		// 	loop               : true,
-		// 	dots               : false,
-		// 	autoplay           : true,
-		// 	autoplayTimeout    : 3500,
-		// 	autoplayHoverPause : false,
-		// 	animateOut         : 'fadeOut',
-		// 	animateIn          : 'fadeIn',
-		// 	mouseDrag          : false
-		// });
+		$slider.owlCarousel({
+			items              : 1,
+			nav                : false,
+			loop               : true,
+			dots               : false,
+			autoplay           : true,
+			autoplayTimeout    : 3500,
+			autoplayHoverPause : false,
+			animateOut         : 'fadeOut',
+			animateIn          : 'fadeIn',
+			mouseDrag          : false
+		});
 	}
 
 	if ($body.hasClass('tour')) {
@@ -142,18 +142,26 @@ $(window).load(function(){
 
 	function imgFull() {
 		var $img     = $slider.find('img'),
-			_Wwidth  = $(window).width(),
-			_Wheight = $(window).height();
+			_sWidth  = $slider.parent().width(),
+			_sHeight = $slider.parent().height();
 
 		$img.each(function(){
-			var _width  = $(this).width(),
-				_height = $(this).height();
+			var $this   = $(this),
+				_tWidth  = $this.width(),
+				_tHeight = $this.height();
 
-			// console.log(_Wwidth + ', ' + _Wheight + ', ' + _width + ', ' + _height);
-			if ( ( _Wheight / _Wwidth ) > ( _height / _width ) ) {
-
+			if ( ( _sHeight / _sWidth ) > ( _tHeight / _tWidth ) ) {
+				$this.css({
+					// 'margin-left' : (parseInt((( _sHeight / _tHeight ) * _tWidth ), 10 ) - _sWidth ) / 2 * (-1) + 'px',
+					'width'       : parseInt((( _sHeight / _tHeight ) * _tWidth ), 10) + 'px',
+					'height'      : _sHeight + 'px'
+				});
 			} else {
-
+				$this.css({
+					// 'margin-left' : (parseInt(((_sWidth / _tWidth ) * _tHeight ), 10 ) - _sHeight ) / 2 * (-1) + 'px',
+					'width'       : _sWidth + 'px',
+					'height'      : parseInt(((_sWidth / _tWidth ) * _tHeight ), 10 ) + 'px'
+				});
 			}
 		});
 	}
