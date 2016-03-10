@@ -19,6 +19,10 @@ $(window).load(function(){
 
 		imgFull();
 
+		$(window).on('resize', function(){
+			imgFull();
+		});
+
 		$slider.owlCarousel({
 			items              : 1,
 			nav                : false,
@@ -151,16 +155,26 @@ $(window).load(function(){
 				_tHeight = $this.height();
 
 			if ( ( _sHeight / _sWidth ) > ( _tHeight / _tWidth ) ) {
+				if (_sWidth < _sHeight) {
+					$this.css({
+						'margin-left' : (parseInt((( _sHeight / _tHeight ) * _tWidth ), 10 ) - _sWidth ) / 2 * (-1) + 'px',
+					});
+				}
+
 				$this.css({
-					// 'margin-left' : (parseInt((( _sHeight / _tHeight ) * _tWidth ), 10 ) - _sWidth ) / 2 * (-1) + 'px',
-					'width'       : parseInt((( _sHeight / _tHeight ) * _tWidth ), 10) + 'px',
-					'height'      : _sHeight + 'px'
+					'width'  : parseInt((( _sHeight / _tHeight ) * _tWidth ), 10) + 'px',
+					'height' : _sHeight + 'px'
 				});
 			} else {
+				if (_sWidth < _sHeight) {
+					$this.css({
+						'margin-left' : (parseInt(((_sWidth / _tWidth ) * _tHeight ), 10 ) - _sHeight ) / 2 * (-1) + 'px',
+					});
+				}
+
 				$this.css({
-					// 'margin-left' : (parseInt(((_sWidth / _tWidth ) * _tHeight ), 10 ) - _sHeight ) / 2 * (-1) + 'px',
-					'width'       : _sWidth + 'px',
-					'height'      : parseInt(((_sWidth / _tWidth ) * _tHeight ), 10 ) + 'px'
+					'width'  : _sWidth + 'px',
+					'height' : parseInt(((_sWidth / _tWidth ) * _tHeight ), 10 ) + 'px'
 				});
 			}
 		});
