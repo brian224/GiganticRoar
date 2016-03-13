@@ -37,11 +37,15 @@ body {
 		}
 
 		.main-content {
-			padding-bottom: 172px;
+			padding-bottom: 188px;
 
 			.btn-more {
 				margin: 0 auto;
 				width: 306px;
+
+				&.is-hide {
+					display: none;
+				}
 			}
 		}
 	}
@@ -252,6 +256,7 @@ a {
 
 		> * {
 			display: inline-block;
+			vertical-align: top;
 			font-size: 22px;
 		}
 
@@ -259,20 +264,37 @@ a {
 			width: 135px;
 		}
 
-		.place {
+		.title {
 			width: 340px;
 		}
 
-		.city {
+		.info {
+			padding: 13px 0;
 			width: 215px;
+
+			> * {
+				display: block;
+				font-size: 18px;
+				line-height: 27px;
+			}
 		}
 
 		.link {
-			background: image-url('shared/btn-icons.png') 0 0 no-repeat;
-			background-position: -41px 0;
-			display: none;
 			width: 21px;
-			height: 16px;
+			height: 100%;
+			position: relative;
+
+			&:before {
+				content: '';
+				margin: -8px 0 0 -10px;
+				background: image-url('shared/btn-icons.png') 0 0 no-repeat;
+				background-position: -41px 0;
+				width: 21px;
+				height: 16px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+			}
 		}
 
 		&.completed {
@@ -281,6 +303,10 @@ a {
 			.link {
 				display: inline-block;
 			}
+		}
+
+		&.prepare .link:before {
+			background-position: -62px 0;
 		}
 
 		&.now {
@@ -318,8 +344,11 @@ a {
 			}
 
 			.link {
-				background-position: -62px 0;
 				display: inline-block;
+
+				&:before {
+					background-position: -62px 0;
+				}
 
 				&:after {
 					left: auto;
@@ -638,6 +667,10 @@ a {
 			bottom: 120px;
 			right: 229px;
 		}
+
+		&.tour .main-content .main-title {
+			margin-bottom: 70px;
+		}
 	}
 
 	.l-header {
@@ -819,12 +852,17 @@ a {
 				left: 10px;
 			}
 
-			.place, .city {
-				width: 50%;
+			.title {
+				width: 70%;
+			}
+
+			.info {
+				width: 30%;
 			}
 
 			.link {
-				margin-top: -8px;
+				margin-top: -40px;
+				width: 44px;
 				position: absolute;
 				top: 50%;
 				right: 10px;
@@ -1104,27 +1142,49 @@ a {
 	}
 
 	.tour-list {
+		padding-right: 0;
 		margin-bottom: 0;
 
 		.list {
 			margin: 15px 0;
-			padding: 0 34px 0 58px;
+			padding: 0 34px 0 48px;
 			height: 46px;
 			position: relative;
-			line-height: 46px;
+			line-height: 23px;
+
+			> * {
+				display: block;
+			}
 
 			.date {
 				left: 0;
+				line-height: 46px;
+			}
+
+			.title {
+				padding-right: 12px;
+				width: 100%;
+				line-height: 23px;
+				@include box-sizing(border-box);
+			}
+
+			.info {
+				padding: 0;
+				width: 100%;
+				line-height: 23px;
 			}
 
 			.place, .city {
-				display: block;
+				display: inline;
 				width: auto;
 				height: 23px;
+				font-size: 12px;
 				line-height: 23px;
 			}
 
 			.link {
+				margin-top: 0;
+				top: 0;
 				right: 0;
 			}
 

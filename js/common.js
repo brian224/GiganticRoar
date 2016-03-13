@@ -44,6 +44,7 @@ $(window).load(function(){
 
 		$btnMore.on('click', function(){
 			$tourList.addClass('show-all');
+			$(this).addClass('is-hide');
 		});
 	}
 
@@ -78,6 +79,7 @@ $(window).load(function(){
 		
 		$.each(Ajax.response, function (index, value) {
 			var _date   = value.date,
+				_title  = value.title,
 				_place  = value.place,
 				_city   = value.city,
 				_link   = value.link,
@@ -85,8 +87,11 @@ $(window).load(function(){
 
 			_Str += '<li class="list ' + _status + '">';
 			_Str += '	<span class="date">' + _date + '</span>';
-			_Str += '	<span class="place">' + _place + '</span>';
-			_Str += '	<span class="city">' + _city + '</span>';
+			_Str += '	<h3 class="title">' + _title + '</h3>';
+			_Str += '	<div class="info">';
+			_Str += '		<span class="place">' + _place + '</span>';
+			_Str += '		<span class="city">' + _city + '</span>';
+			_Str += '	</div>';
 			_Str += '	<a class="link" href="' + _link + '" target="_blank"></a>';
 			_Str += '</li>';
 		});
