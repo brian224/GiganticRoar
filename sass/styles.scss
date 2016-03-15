@@ -976,13 +976,16 @@ a {
 		}
 
 		&.tour {
-			overflow-x: hidden;
+			.l-content {
+				margin: 0;
+			}
 
 			.main-content {
 				padding-bottom: 20px;
 					
 				.btn-more {
-					width: 100%;
+					margin: 0 12px;
+					width: calc(100% - 24px);
 				}
 			}
 		}
