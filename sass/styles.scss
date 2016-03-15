@@ -118,8 +118,14 @@ a {
 		position: relative;
 	}
 
-	.owl-carousel .owl-item img {
-		max-width: none;
+	.owl-carousel .owl-item {
+		.list {
+			overflow: hidden;
+		}
+
+		img {
+			max-width: none;
+		}
 	}
 }
 
@@ -312,36 +318,6 @@ a {
 		&.now {
 			background: #000;
 			position: relative;
-
-			&:before, &:after {
-				content: '';
-				background: #000;
-				width: 1000px;
-				height: 100%;
-				position: absolute;
-				top: 0;
-			}
-
-			&:before {
-				left: -1000px;
-			}
-
-			&:after {
-				right: -1000px;
-			}
-
-			.date:before, .link:after {
-				content: 'NEAR SHOW';
-				margin-top: -18px;
-				width: 50px;
-				position: absolute;
-				top: 50%;
-				left: -100px;
-				color: #70ffbd;
-				font-size: 12px;
-				line-height: 18px;
-				text-align: center;
-			}
 
 			.link {
 				display: inline-block;
@@ -692,6 +668,38 @@ a {
 		width: 720px;
 		height: 400px;
 	}
+
+	.tour-list .list.now {
+		&:before, &:after {
+			content: '';
+			background: #000;
+			width: 1000px;
+			height: 100%;
+			position: absolute;
+			top: 0;
+		}
+
+		&:before {
+			left: -1000px;
+		}
+
+		&:after {
+			right: -1000px;
+		}
+
+		.date:before, .link:after {
+			content: 'NEAR SHOW';
+			margin-top: -18px;
+			width: 50px;
+			position: absolute;
+			top: 50%;
+			left: -100px;
+			color: #70ffbd;
+			font-size: 12px;
+			line-height: 18px;
+			text-align: center;
+		}
+	}
 }
 
 @media screen and (min-width: 740px) {
@@ -838,8 +846,6 @@ a {
 	}
 
 	.tour-list {
-		padding: 0 12px;
-
 		.list {
 			margin: 15px 0;
 			padding: 0 60px 0 100px;
@@ -849,7 +855,7 @@ a {
 				width: auto;
 				position: absolute;
 				top: 0;
-				left: 10px;
+				left: 22px;
 			}
 
 			.title {
@@ -865,7 +871,7 @@ a {
 				width: 44px;
 				position: absolute;
 				top: 50%;
-				right: 10px;
+				right: 22px;
 			}
 		}
 	}
@@ -972,11 +978,16 @@ a {
 		&.tour {
 			overflow-x: hidden;
 
+			.l-content {
+				margin: 0;
+			}
+
 			.main-content {
 				padding-bottom: 20px;
 					
 				.btn-more {
-					width: 100%;
+					margin: 0 12px;
+					width: calc(100% - 24px);
 				}
 			}
 		}
@@ -1147,7 +1158,7 @@ a {
 
 		.list {
 			margin: 15px 0;
-			padding: 0 34px 0 48px;
+			padding: 0 46px 0 60px;
 			height: 46px;
 			position: relative;
 			line-height: 23px;
@@ -1157,7 +1168,7 @@ a {
 			}
 
 			.date {
-				left: 0;
+				left: 12px;
 				line-height: 46px;
 			}
 
@@ -1185,7 +1196,7 @@ a {
 			.link {
 				margin-top: 0;
 				top: 0;
-				right: 0;
+				right: 12px;
 			}
 
 			> * {
