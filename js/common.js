@@ -13,7 +13,7 @@ $(window).load(function(){
 	});
 
 	if ($body.hasClass('index')) {
-		$.getJSON('/json/tour.json' , function(Ajax){
+		$.getJSON('json/tour.json' , function(Ajax){
 			indexItem(Ajax);
 		});
 
@@ -38,7 +38,7 @@ $(window).load(function(){
 	}
 
 	if ($body.hasClass('tour')) {
-		$.getJSON('/json/tour.json' , function(Ajax){
+		$.getJSON('json/tour.json' , function(Ajax){
 			tourItem(Ajax);
 		});
 
@@ -49,13 +49,13 @@ $(window).load(function(){
 	}
 
 	if ($body.hasClass('music')) {
-		$.getJSON('/json/music.json' , function(Ajax){
+		$.getJSON('json/music.json' , function(Ajax){
 			musicItem(Ajax);
 		});
 	}
 
 	if ($body.hasClass('video')) {
-		$.getJSON('/json/video.json' , function(Ajax){
+		$.getJSON('json/video.json' , function(Ajax){
 			videoItem(Ajax);
 		});
 	}
