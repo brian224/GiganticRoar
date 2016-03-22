@@ -651,12 +651,12 @@ a {
 
 	.l-header {
 		.logo {
-			right: 43px;
+			left: 43px;
 		}
 
 		.menu-list {
-			margin-left: 65px;
-			width: calc(100% - 171px - 65px - 43px);
+			margin-left: 236px;
+			width: calc(100% - 171px - 65px);
 		}
 	}
 
@@ -831,12 +831,12 @@ a {
 
 	.l-header {
 		.logo {
-			right: 21px;
+			left: 21px;
 		}
 
 		.menu-list {
-			margin-left: 40px;
-			width: calc(100% - 171px - 40px - 43px);
+			margin-left: 211px;
+			width: calc(100% - 171px - 40px);
 		}
 	}
 
@@ -1004,7 +1004,7 @@ a {
 			height: 51px;
 			position: absolute;
 			bottom: -65px;
-			right: 12px;
+			left: 12px;
 		}
 
 		.l-nav {
